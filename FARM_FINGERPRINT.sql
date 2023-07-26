@@ -2,8 +2,6 @@
 Suppose you have a table users with columns first_name, last_name, and date_of_birth. If you want to create a unique key using all these columns, you can use the FARM_FINGERPRINT function, which is a hash function provided by BigQuery:
 */
 
-sql
-Copy code
 SELECT
   first_name,
   last_name,
@@ -11,7 +9,7 @@ SELECT
   FARM_FINGERPRINT(CONCAT(first_name, last_name, CAST(date_of_birth AS STRING))) AS unique_key
 FROM
   `your_dataset.users`;
-Here:
+
 
 /*
 We are using the CONCAT function to concatenate first_name, last_name, and date_of_birth.
